@@ -1,2 +1,2 @@
-Student project done to gain better understanding real time operating systems, especially to understand the communication between the tasks via MailBoxes, Queues, Semaphores.
+Student project done to gain better understanding of real time operating systems, especially to understand the communication between the tasks via MailBoxes, Queues, Semaphores.
 The application extends µC/OS-II system.
