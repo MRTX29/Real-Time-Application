@@ -38,17 +38,17 @@ OS_STK KeyProcessTaskStack[TASK_STK_SIZE];
 OS_STK SendTaskStack[TASK_STK_SIZE];
 OS_STK DisplayTaskStack[TASK_STK_SIZE];
 OS_EVENT *FirstQueue;      // Queue
-OS_EVENT *KeyboardMailBox; // MailBox do komunikacji KeyboardReadTask -> ProcessTask
-OS_EVENT *ProcessMailBox;  // MailBox do komunikacji ProcessTask -> SendTask
+OS_EVENT *KeyboardMailBox; // MailBox KeyboardReadTask -> ProcessTask
+OS_EVENT *ProcessMailBox;  // MailBox  ProcessTask -> SendTask
 OS_EVENT *Semaphore;       // Semaphore
-OS_EVENT *MBox[5];         // Tablica 5 MailBoxów do komunikacji SendTask -> MailBoxTask
-OS_EVENT *SendQueue;       // Tablica 5 kolejek do komunikacji SendTask -> MailBoxTask
-OS_MEM *MemForMessages;    // Pamięć przydzielana dynamicznie do wysyłania wiadomości
+OS_EVENT *MBox[5];         // Matrix 5 MailBoxes to SendTask -> MailBoxTask
+OS_EVENT *SendQueue;       // Matrix 5 Mailboxes to SendTask -> MailBoxTask
+OS_MEM *MemForMessages;    // Dynamic memory used for the messages
 
 INT32U TaskData[N_TASKS]; /* Parameters to pass to each task               */
 void *MyQueueData[MyQueueDataSize];
 
-INT32U semaphore_load; // Zmienna globalna używana przez zadania Semaforowe
+INT32U semaphore_load; // Global variable used for the sempahores
 
 struct Message
 {
